@@ -9,7 +9,8 @@ import Launch from "./components/Launch";
 import Waitlist from "./components/Waitlist";
 
 export default function Home() {
-  const containerRef = useRef<HTMLMainElement>(null);
+  // FIXED: Changed HTMLMainElement to HTMLElement to pass TypeScript verification
+  const containerRef = useRef<HTMLElement>(null);
   const sequenceRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -80,7 +81,6 @@ export default function Home() {
 
     }, containerRef);
 
-    // Bulletproof clean up that bypasses type checking
     return () => {
       ctx.revert();
     };

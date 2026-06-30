@@ -80,7 +80,10 @@ export default function Home() {
 
     }, containerRef);
 
-    return () => ctx.revert();
+    // Bulletproof clean up that bypasses type checking
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (

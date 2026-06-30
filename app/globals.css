@@ -28,5 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%; /* Force the body to be as wide as the screen */
   margin: 0;
+  padding: 0;  /* Ensure no default browser padding pushes it off-center */
 }
